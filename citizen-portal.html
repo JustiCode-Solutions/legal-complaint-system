@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Portal - LegalJustice System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/citizen-portal.css">
+    <script src="script/citizen-portal.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="citizen-header">
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-balance-scale"></i>
+                <div class="logo-text">
+                    <h1>LegalJustice</h1>
+                    <span>Citizen Portal</span>
+                </div>
+            </a>
+            
+            <div class="user-profile">
+                <div class="user-info">
+                    <img src="https://ui-avatars.com/api/?name=John+Doe&background=ff5722&color=fff" alt="User Avatar" class="user-avatar">
+                    <div class="user-details">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-id">CID-2023-00125</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="user-dropdown">
+                    <a href="#"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+                    <hr>
+                    <a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="citizen-main">
+        <div class="container">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner">
+                <div class="welcome-content">
+                    <h2><i class="fas fa-handshake"></i> Welcome to Citizen Portal</h2>
+                    <p>File complaints, track cases, and access legal assistance with AI-powered tools.</p>
+                </div>
+                <div class="welcome-stats">
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Active Cases</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Total Filed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">9</div>
+                        <div class="stat-label">Resolved</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="quick-actions">
+                <button class="quick-action-btn primary" id="newComplaintBtn">
+                    <i class="fas fa-plus-circle"></i>
+                    <span>File New Complaint</span>
+                </button>
+                <button class="quick-action-btn" id="trackCaseBtn">
+                    <i class="fas fa-search"></i>
+                    <span>Track Case</span>
+                </button>
+                <button class="quick-action-btn" id="aiAssistantBtn">
+                    <i class="fas fa-robot"></i>
+                    <span>AI Legal Assistant</span>
+                </button>
+                <button class="quick-action-btn" id="documentsBtn">
+                    <i class="fas fa-folder"></i>
+                    <span>My Documents</span>
+                </button>
+            </div>
+
+            <div class="dashboard-grid">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- My Cases -->
+                    <section class="dashboard-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-gavel"></i> My Active Cases</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="cases-list">
+                                <div class="case-item">
+                                    <div class="case-info">
+                                        <div class="case-id">C-2023-001</div>
+                                        <h4>Property Dispute - Neighbor Encroachment</h4>
+                                        <div class="case-meta">
+                                            <span class="case-status in-progress">In Progress</span>
+                                            <span class="case-date"><i class="far fa-calendar"></i> Filed: 15 Nov 2023</span>
+                                            <span class="case-officer"><i class="fas fa-user-shield"></i> Officer: Sarah Chen</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-actions">
+                                        <button class="btn-sm view-case"><i class="fas fa-eye"></i> View</button>
+                                        <button class="btn-sm upload-doc"><i class="fas fa-upload"></i> Upload</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="case-item">
+                                    <div class="case-info">
+                                        <div class="case-id">C-2023-002</div>
+                                        <h4>Consumer Rights - Defective Product</h4>
+                                        <div class="case-meta">
+                                            <span class="case-status pending">Under Review</span>
+                                            <span class="case-date"><i class="far fa-calendar"></i> Filed: 05 Dec 2023</span>
+                                            <span class="case-officer"><i class="fas fa-user-shield"></i> Officer: Michael Rodriguez</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-actions">
+                                        <button class="btn-sm view-case"><i class="fas fa-eye"></i> View</button>
+                                        <button class="btn-sm upload-doc"><i class="fas fa-upload"></i> Upload</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="case-item">
+                                    <div class="case-info">
+                                        <div class="case-id">C-2023-003</div>
+                                        <h4>Employment - Unpaid Wages</h4>
+                                        <div class="case-meta">
+                                            <span class="case-status resolved">Resolved</span>
+                                            <span class="case-date"><i class="far fa-calendar"></i> Filed: 20 Oct 2023</span>
+                                            <span class="case-officer"><i class="fas fa-user-shield"></i> Officer: James Wilson</span>
+                                        </div>
+                                    </div>
+                                    <div class="case-actions">
+                                        <button class="btn-sm view-case"><i class="fas fa-eye"></i> View</button>
+                                        <button class="btn-sm download-cert"><i class="fas fa-download"></i> Certificate</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- AI Legal Assistant -->
+                    <section class="dashboard-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-robot"></i> AI Legal Assistant</h3>
+                            <span class="status-badge online"><i class="fas fa-circle"></i> Online</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="chat-container">
+                                <div class="chat-messages">
+                                    <div class="message ai">
+                                        <div class="message-avatar">AI</div>
+                                        <div class="message-content">
+                                            <p>Hello! I'm your AI Legal Assistant. How can I help you today?</p>
+                                            <span class="message-time">Just now</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chat-input">
+                                    <input type="text" placeholder="Type your legal question..." id="chatInput">
+                                    <button id="sendChat"><i class="fas fa-paper-plane"></i></button>
+                                </div>
+                                <div class="quick-questions">
+                                    <button class="quick-question">How to file a complaint?</button>
+                                    <button class="quick-question">What documents are needed?</button>
+                                    <button class="quick-question">Check case status</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- File Complaint Card -->
+                    <section class="dashboard-card complaint-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-file-alt"></i> File New Complaint</h3>
+                        </div>
+                        <div class="card-body">
+                            <form id="complaintForm" class="complaint-form">
+                                <div class="form-group">
+                                    <label for="complaintType">Complaint Type</label>
+                                    <select id="complaintType" required>
+                                        <option value="">Select type</option>
+                                        <option value="property">Property Dispute</option>
+                                        <option value="consumer">Consumer Rights</option>
+                                        <option value="employment">Employment Issue</option>
+                                        <option value="civil">Civil Rights</option>
+                                        <option value="family">Family Law</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="complaintTitle">Complaint Title</label>
+                                    <input type="text" id="complaintTitle" placeholder="Brief description of your complaint" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="complaintDescription">Detailed Description</label>
+                                    <textarea id="complaintDescription" rows="4" placeholder="Provide detailed information about your complaint..." required></textarea>
+                                    <div class="char-count">0/2000 characters</div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="urgency">Urgency Level</label>
+                                    <div class="urgency-levels">
+                                        <label class="urgency-option">
+                                            <input type="radio" name="urgency" value="low">
+                                            <span class="urgency-dot low"></span>
+                                            Low
+                                        </label>
+                                        <label class="urgency-option">
+                                            <input type="radio" name="urgency" value="medium" checked>
+                                            <span class="urgency-dot medium"></span>
+                                            Medium
+                                        </label>
+                                        <label class="urgency-option">
+                                            <input type="radio" name="urgency" value="high">
+                                            <span class="urgency-dot high"></span>
+                                            High
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label><i class="fas fa-paperclip"></i> Attach Documents (Optional)</label>
+                                    <div class="file-upload-area" id="fileUploadArea">
+                                        <i class="fas fa-cloud-upload-alt"></i>
+                                        <p>Drag & drop files or <span>browse</span></p>
+                                        <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+                                    </div>
+                                    <div class="file-list" id="fileList"></div>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary submit-complaint">
+                                    <i class="fas fa-paper-plane"></i> Submit Complaint
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+
+                    <!-- Recent Activities -->
+                    <section class="dashboard-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-history"></i> Recent Activities</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="activities-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon success">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Complaint <strong>C-2023-003</strong> has been resolved</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon info">
+                                        <i class="fas fa-comment"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Officer Chen requested additional documents for <strong>C-2023-001</strong></p>
+                                        <span class="activity-time">1 day ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon warning">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>Reminder: Submit evidence for <strong>C-2023-002</strong> by Dec 20</p>
+                                        <span class="activity-time">2 days ago</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="activity-item">
+                                    <div class="activity-icon primary">
+                                        <i class="fas fa-file-upload"></i>
+                                    </div>
+                                    <div class="activity-content">
+                                        <p>New complaint <strong>C-2023-004</strong> filed successfully</p>
+                                        <span class="activity-time">3 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <!-- Case Details Modal -->
+    <div class="modal-overlay" id="caseModal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3><i class="fas fa-gavel"></i> Case Details</h3>
+            </div>
+            <div class="modal-body" id="caseModalContent">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Assistant Modal -->
+    <div class="modal-overlay" id="aiModal">
+        <div class="modal-content wide-modal">
+            <button class="modal-close">&times;</button>
+            <div class="modal-header">
+                <h3><i class="fas fa-robot"></i> AI Legal Assistant</h3>
+            </div>
+            <div class="modal-body">
+                <div class="ai-chat-full">
+                    <!-- AI chat interface -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toastContainer"></div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+            <i class="fas fa-balance-scale fa-spin"></i>
+            <p>Processing your request...</p>
+        </div>
+    </div>
+</body>
+</html>
