@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Complaint Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="script/script.js" defer></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <!-- Weather Widget -->
+        <div class="weather-widget">
+            <i class="fas fa-sun"></i>
+            <div>
+                <div class="temperature">21°C</div>
+                <div class="weather-condition">Clear</div>
+            </div>
+        </div>
+        
+        <div class="loading-content">
+            <!-- Animated Justice Scale -->
+            <div class="scale-container">
+                <div class="scale-beam"></div>
+                <div class="scale-left">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                <div class="scale-right">
+                    <i class="fas fa-balance-scale"></i>
+                </div>
+                <div class="scale-stand"></div>
+                <div class="scale-base"></div>
+            </div>
+            
+            <!-- Loading Text with Animation -->
+            <div class="loading-text">Loading LegalJustice System</div>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            
+            <!-- Percentage Counter -->
+            <div class="percentage" id="percentage">0%</div>
+            
+            <!-- Loading Dots -->
+            <div class="loading-dots">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            
+            <!-- Status Messages -->
+            <div class="status-messages">
+                <div class="status-message">Initializing AI modules...</div>
+                <div class="status-message">Loading legal database...</div>
+                <div class="status-message">Connecting to PostgreSQL...</div>
+                <div class="status-message">Preparing user interface...</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">
+                <i class="fas fa-balance-scale"></i>
+                <div class="logo-text">
+                    <h1>LegalJustice</h1>
+                    <span>Complaint Management System</span>
+                </div>
+            </a>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="#portal" class="nav-link">User Portal</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn-login">Login</button>
+                <button class="btn-register">Register</button>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1>Streamlining <span>Legal Justice</span> Through Technology</h1>
+            <p>An advanced AI-powered platform for efficient complaint management, automated categorization, and seamless resolution tracking for citizens and legal officers.</p>
+            
+            <div class="hero-buttons">
+                <a href="#portal" class="btn btn-primary">
+                    <i class="fas fa-rocket"></i> Get Started
+                </a>
+                <a href="#features" class="btn btn-secondary">
+                    <i class="fas fa-play-circle"></i> Watch Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Portal Section -->
+    <section class="portal-section" id="portal">
+        <div class="container">
+            <div class="section-title">
+                <h2>Access Your Portal</h2>
+                <p>Choose your role to access the appropriate dashboard with specialized tools and features</p>
+            </div>
+            
+            <div class="portal-cards">
+                <!-- Citizen/Complainant Portal -->
+                <div class="portal-card">
+                    <div class="portal-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Citizen / Complainant</h3>
+                    <p>File new complaints, track progress, and access AI-powered legal assistance</p>
+                    
+                    <ul class="portal-features">
+                        <li><i class="fas fa-check"></i> File new complaints with ease</li>
+                        <li><i class="fas fa-check"></i> AI-powered categorization & suggestions</li>
+                        <li><i class="fas fa-check"></i> Upload documents and evidence</li>
+                        <li><i class="fas fa-check"></i> Real-time complaint tracking</li>
+                        <li><i class="fas fa-check"></i> Legal FAQ chatbot assistance</li>
+                    </ul>
+                    
+                    <a href="citizen-portal.html" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Enter Citizen Portal
+                    </a>
+                </div>
+                
+                <!-- Legal Officer/Admin Portal -->
+                <div class="portal-card">
+                    <div class="portal-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>Legal Officer / Admin</h3>
+                    <p>Manage complaints, assign cases, track investigations, and resolve legal matters</p>
+                    
+                    <ul class="portal-features">
+                        <li><i class="fas fa-check"></i> View all complaints dashboard</li>
+                        <li><i class="fas fa-check"></i> Assign cases to legal officers</li>
+                        <li><i class="fas fa-check"></i> Update case status and track progress</li>
+                        <li><i class="fas fa-check"></i> Generate reports and analytics</li>
+                        <li><i class="fas fa-check"></i> Manage system users and permissions</li>
+                    </ul>
+                    
+                    <a href="officer-portal.html" class="btn btn-primary">
+                        <i class="fas fa-sign-in-alt"></i> Enter Admin Portal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Advanced Features</h2>
+                <p>Powered by cutting-edge technology to streamline legal complaint management</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Utilizing Scikit-learn and NLTK for automated complaint categorization, sentiment analysis, and urgency level determination.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Legal Chatbot Assistant</h3>
+                    <p>24/7 AI-powered chatbot with API key access to answer legal questions and guide users through the complaint process.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Secure PostgreSQL Database</h3>
+                    <p>All complaint data, documents, and user information securely stored in a robust PostgreSQL database with encryption.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Real-Time Analytics</h3>
+                    <p>Comprehensive dashboards with real-time analytics for tracking complaint resolution rates and officer performance.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-upload"></i>
+                    </div>
+                    <h3>Document Management</h3>
+                    <p>Secure upload, storage, and management of legal documents and evidence with version control and access tracking.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Automated Notifications</h3>
+                    <p>Real-time notifications for case updates, deadlines, and important milestones to keep all stakeholders informed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section" id="about">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15K+</h3>
+                    <p>Complaints Resolved</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2.5K+</h3>
+                    <p>Legal Officers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>98%</h3>
+                    <p>User Satisfaction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>40%</h3>
+                    <p>Faster Resolution</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Testimonial -->
+
+    <section class="testimonials-section" id="testimonials">
+    <div class="container">
+        <div class="section-title">
+            <h2>What Our Users Say</h2>
+            <p>Trusted by legal professionals and organizations worldwide</p>
+        </div>
+        
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p>"The platform's analytics helped us identify bottlenecks in our complaint resolution process. We're now resolving cases 40% faster."</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">MG</div>
+                    <div class="author-info">
+                        <strong>Maria Gonzalez</strong>
+                        <span>Director of Citizen Services</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p>"As a legal officer, the document management system has streamlined our evidence tracking. The version control feature is invaluable."</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">RK</div>
+                    <div class="author-info">
+                        <strong>Robert Kim</strong>
+                        <span>Legal Department Head</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="quote-icon">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p>"Automated notifications ensure nothing falls through the cracks. Our stakeholder satisfaction increased to 98% after implementation."</p>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">JW</div>
+                    <div class="author-info">
+                        <strong>James Wilson</strong>
+                        <span>Case Management Lead</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>LegalJustice</h3>
+                    <p>An advanced AI-powered legal complaint management system designed to streamline justice delivery and improve citizen-government legal interactions.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#portal">User Portal</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Technology Stack</h3>
+                    <ul>
+                        <li>Scikit-learn & NLTK</li>
+                        <li>PostgreSQL Database</li>
+                        <li>AI/ML Integration</li>
+                        <li>Secure API Access</li>
+                        <li>Cloud Infrastructure</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Justice Building, Legal District</li>
+                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fas fa-envelope"></i> support@legaljustice.gov</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Legal Complaint Management System. All rights reserved. | Powered by PostgreSQL & AI/ML Services</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
