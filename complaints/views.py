@@ -1,37 +1,34 @@
-from django.http import HttpResponse
-
-def home(request):
-    return HttpResponse("<h1>Welcome to the Online Legal Complaint System</h1><p>Aapki complaint yahan register hogi.</p>")
 from django.shortcuts import render, redirect
 from .models import Complaint
 
-# Ye hai aapka mini AI logic
+#  AI logic 
 def suggest_category(description):
     description = description.lower()
-    if 'online' in description or 'hack' in description or 'spam' in description:
+    if 'online' in description or 'hack' in description:
         return 'Cyber Crime'
-    elif 'land' in description or 'house' in description or 'property' in description:
+    elif 'land' in description or 'property' in description:
         return 'Property Dispute'
-    elif 'money' in description or 'bank' in description or 'cheat' in description:
+    elif 'money' in description or 'bank' in description:
         return 'Financial Fraud'
-    else:
-        return 'General'
+    return 'General'
 
+# 1. Home page Sriparna design show
+def home(request):
+    return render(request, 'complaints/index.html')
+
+# 2. Citizen Portal jahan user complaint likhega
 def add_complaint(request):
     if request.method == 'POST':
         title = request.POST.get('title')
         desc = request.POST.get('description')
         
-        # AI se category poocho
+        # AI se category 
         ai_category = suggest_category(desc)
         
-        # Database mein save karo
-        Complaint.objects.create(
-            user=request.user, 
-            title=title, 
-            description=desc, 
-            category=ai_category
-        )
+        # Database mein save karein
+        Complaint.objects.create(title=title, description=desc, category=ai_category)
+        
+        # Success page par category ke saath bhejein
         return render(request, 'complaints/success.html', {'category': ai_category})
     
-    return render(request, 'complaints/add_complaint.html')
+    return render(request, 'complaints/citizen-portal.html')
